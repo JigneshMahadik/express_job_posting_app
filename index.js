@@ -10,7 +10,7 @@ app.use(express.json());
 
 // MongoDb connection
 mongoose
-    .connect("mongodb://localhost:27017/jobApp")
+    .connect("mongodb+srv://jignesh:dUaszhl26B0rpW0f@cluster0.s7hzif4.mongodb.net/")
     .then(()=> console.log("Connection established successfully"))
     .catch((err)=> console.log("Error while connecting to Database !",err));
 
@@ -18,6 +18,6 @@ mongoose
 app.use(jobRoutes);
 
 
-app.listen(8084,()=>{
-    console.log("Server is up and running on port : 8084");
+app.listen(10000,()=>{
+    console.log("Server is up and running on port : 10000");
 })
