@@ -26,6 +26,7 @@ const viewJob = async(req,res)=>{
         // console.log(jobList);
         res.json({
             status: true,
+            total_records : jobList.length,
             Jobs : jobList
         });
     } 
