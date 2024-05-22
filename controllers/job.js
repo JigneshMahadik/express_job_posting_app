@@ -23,7 +23,7 @@ const createJob = async(req,res)=>{
 const viewJob = async(req,res)=>{
     try {
         const jobList = await jobModel.find();
-        console.log(jobList);
+        // console.log(jobList);
         res.json({
             status: true,
             Jobs : jobList
@@ -39,15 +39,17 @@ const viewJob = async(req,res)=>{
 
 const editJob = async(req,res)=>{
     try {
-        // const id = req.params.id;
-        // const newData = req.body;
+        const id = req.params.id;
+        const newData = req.body;
         const findObj = {
-
-        }
-        const updatedField = {
-            salary : 120000
+            _id : id
         };
-        await jobModel.findOneAndUpdate(findObj, updatedField);
+        // console.log(findObj);
+        // const updatedField = {
+        //     salary : newData
+        // };
+        // console.log(newData);
+        await jobModel.findOneAndUpdate(findObj, newData);
         res.json({
             status: true,
             message : "Data has been updated successfully.",
